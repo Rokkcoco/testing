@@ -1,8 +1,7 @@
 const ages = [1, 2, 50, 70, 100, 52];
 
-const predicate = (age: number) => {
-    return age > 90
-}
+const predicate = (age: number) => age > 90
+
 
 const oldAges = [100, 91];
 
@@ -17,9 +16,8 @@ const courses = [
     {title: "React", price: 150}
 ]
 
-const chipPredicate = (course:CourseType) => {
-    return course.price < 160
-}
+const chipPredicate = (course:CourseType) => course.price < 160
+
 
 const chipCourses = [
     {title: "JS", price: 200},
