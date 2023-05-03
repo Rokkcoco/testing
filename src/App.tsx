@@ -62,6 +62,23 @@ function App() {
         {message: 'message3'},
     ])
 
+    let [title, setTitle] = useState<string>('')
+
+    //Функция которая принимает прокинутый title снизу и обрабатывает его. FullInput
+    const addMessageFullInput = (title:string) => {
+        let newMessage = [...message, {message: title}]
+        setMessage(newMessage)
+    }
+
+    const addMessage = (title:string) => {
+        setMessage([...message, {message: title}])
+        setTitle('')
+    }
+
+    const buttonHandler = () => { //функция обертка, можно просто передать колбэк ()=>addMessage(title)
+        addMessage(title)
+    }
+
 
     return (
 
@@ -70,10 +87,10 @@ function App() {
             /* <Button name={'Surname'} callback={() => Button1Foo(names)}/>
    <Button name={'Name'} callback={() => Button2Foo(names)}/>*/
         <div className="App">
-            <FullInput setMessage={setMessage} data={message}/>
+            <FullInput setMessage={setMessage} data={message} addMessageFullInput={addMessageFullInput}/>
 
-            <Input/>
-            <Button2 name={`+`} callback={()=>{}}/>
+            <Input title={title} setTitle={setTitle}/>
+            <Button2 name={`+`} buttonHandler={buttonHandler}/>
 
 
             {message.map((el, index) => {
