@@ -2,13 +2,20 @@ import React, {useState} from 'react';
 import './App.css';
 import MapFilterArray from "./components/MapFilterArray";
 import {Button} from "./components/Button";
+import FullInput from "./components/FullInput";
+import Input from "./components/Input";
+import Button2 from "./components/Button2";
 // import MapFilterArray from "./components/MapFilterArray";
 
 export type FilterType = 'ALL' | 'Dollars' | 'RUBLS'
 
-type namesType ={
-    name:string
-    surname:string
+type namesType = {
+    name: string
+    surname: string
+}
+
+type messageType = {
+    message: string
 }
 
 function App() {
@@ -37,29 +44,47 @@ function App() {
         }*/
 
 
-
     //Кнопки с выводом данных из объекта Button
-   /* const Button1Foo = (data: namesType) => {
-        console.log(data.surname)
-    }
-    const Button2Foo = (data: namesType) => {
-        console.log(data.name)
-    }
-    const names = {
-        name: "ivan",
-        surname: "ivanov"
-    }*/
+    /* const Button1Foo = (data: namesType) => {
+         console.log(data.surname)
+     }
+     const Button2Foo = (data: namesType) => {
+         console.log(data.name)
+     }
+     const names = {
+         name: "ivan",
+         surname: "ivanov"
+     }*/
+
+    let [message, setMessage] = useState<Array<messageType>>([
+        {message: 'message1'},
+        {message: 'message2'},
+        {message: 'message3'},
+    ])
 
 
     return (
-        <>
-           {/* <div className="App">
-                <Button name={'Surname'} callback={() => Button1Foo(names)}/>
-                <Button name={'Name'} callback={() => Button2Foo(names)}/>
-            </div>*/}
 
-        </>
         /*   <MapFilterArray data={aaMoney} onClickMoney={onClickMoney}/>*/
-    )
+
+            /* <Button name={'Surname'} callback={() => Button1Foo(names)}/>
+   <Button name={'Name'} callback={() => Button2Foo(names)}/>*/
+        <div className="App">
+            {/*<FullInput setMessage={setMessage} data={message}/>*/}
+
+            <Input/>
+            <Button2 name={`+`} callback={()=>{}}/>
+
+
+            {message.map((el, index) => {
+                return (
+                    <div key={index}>{el.message}</div>
+                )
+
+    })}
+        </div>
+            )
+
 }
+
 export default App;

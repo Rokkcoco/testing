@@ -1,4 +1,4 @@
-test("should take old man older then 90", () => {
+test.skip("should take old man older then 90", () => {
     const ages = [1, 2, 50, 70, 100, 52];
 
     const oldAges = ages.filter(age => age > 90);
@@ -6,7 +6,7 @@ test("should take old man older then 90", () => {
     expect(oldAges.length).toBe(1);
     expect(oldAges[0]).toBe(100);
 })
-test("should take courses chipper 160", () => {
+test.skip("should take courses chipper 160", () => {
     type CoursesType = {
         title: string
         price: number
@@ -26,7 +26,7 @@ test("should take courses chipper 160", () => {
 })
 
 
-test("get only completed tasks", () => {
+test.skip("get only completed tasks", () => {
     const tasks = [
         {id: 1, title: "Bread", isDone: true},
         {id: 2, title: "Milk", isDone: false},

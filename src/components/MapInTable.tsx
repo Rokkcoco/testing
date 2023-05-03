@@ -28,3 +28,4 @@ const MapInTable = (props: TestingProps) => {
 
 
 export default MapInTable;
+
