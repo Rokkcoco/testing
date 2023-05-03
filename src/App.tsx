@@ -70,7 +70,7 @@ function App() {
             /* <Button name={'Surname'} callback={() => Button1Foo(names)}/>
    <Button name={'Name'} callback={() => Button2Foo(names)}/>*/
         <div className="App">
-            {/*<FullInput setMessage={setMessage} data={message}/>*/}
+            <FullInput setMessage={setMessage} data={message}/>
 
             <Input/>
             <Button2 name={`+`} callback={()=>{}}/>
