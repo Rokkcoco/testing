@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {splitIntoWords} from "./01-hello-tests/01";
+import {User} from "./06-callbacks/06";
 
 // const result = splitIntoWords("hello");
 // const sentense = "Hello my friends!";
@@ -15,7 +16,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
 
-    <App />
+    <User />
 );
 
 // If you want to start measuring performance in your app, pass a function
