@@ -21,7 +21,7 @@ const FullInput = (props:FullInputType):JSX.Element => {
     }
 
     //Фукнция, которая при вызове прокидывает title наверх и обрабатывается там
-    const onClickButtonHandler =() => {
+    const onClickButtonHandler = () => {
         props.addMessageFullInput(title)
     }
 
