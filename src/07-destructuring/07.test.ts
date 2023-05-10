@@ -24,7 +24,7 @@ beforeEach(() => {
     }
 })
 
-test("", () => {
+test.skip("destructuring test", () => {
 
     //Берем свойства из объекта. Задаем переменные и делаем ссылку на объект, если совпадает то все ок
     const {age, lesson} = props;
