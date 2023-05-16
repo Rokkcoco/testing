@@ -5,6 +5,8 @@ import {Button} from "./components/Button";
 import FullInput from "./components/FullInput";
 import Input from "./components/Input";
 import Button2 from "./components/Button2";
+
+import {log} from "util";
 // import MapFilterArray from "./components/MapFilterArray";
 
 export type FilterType = 'ALL' | 'Dollars' | 'RUBLS'
@@ -56,28 +58,34 @@ function App() {
          surname: "ivanov"
      }*/
 
-    let [message, setMessage] = useState<Array<messageType>>([
-        {message: 'message1'},
-        {message: 'message2'},
-        {message: 'message3'},
-    ])
 
-    let [title, setTitle] = useState<string>('')
+    // //FullInput
+    // let [message, setMessage] = useState<Array<messageType>>([
+    //     {message: 'message1'},
+    //     {message: 'message2'},
+    //     {message: 'message3'},
+    // ])
+    // //Input
+    // let [title, setTitle] = useState<string>('')
+    //
+    // //Функция которая принимает прокинутый title снизу и обрабатывает его. FullInput
+    // const addMessageFullInput = (title:string) => {
+    //     let newMessage = [...message, {message: title}]
+    //     setMessage(newMessage)
+    // }
 
-    //Функция которая принимает прокинутый title снизу и обрабатывает его. FullInput
-    const addMessageFullInput = (title:string) => {
-        let newMessage = [...message, {message: title}]
-        setMessage(newMessage)
-    }
+    //Button2
+    // const addMessage = (title:string) => {
+    //     setMessage([...message, {message: title}])
+    //     setTitle('')
+    // }
+    //Button2
+    // const buttonHandler = () => { //функция обертка, можно просто передать колбэк ()=>addMessage(title)
+    //     addMessage(title)
+    // }
 
-    const addMessage = (title:string) => {
-        setMessage([...message, {message: title}])
-        setTitle('')
-    }
 
-    const buttonHandler = () => { //функция обертка, можно просто передать колбэк ()=>addMessage(title)
-        addMessage(title)
-    }
+
 
 
     return (
@@ -86,19 +94,24 @@ function App() {
 
             /* <Button name={'Surname'} callback={() => Button1Foo(names)}/>
    <Button name={'Name'} callback={() => Button2Foo(names)}/>*/
+
+
+
+
+        /*<FullInput setMessage={setMessage} data={message} addMessageFullInput={addMessageFullInput}/>
+
+    <Input title={title} setTitle={setTitle}/>
+    <Button2 name={`+`} buttonHandler={buttonHandler}/>
+
+
+    {message.map((el, index) => {
+        return (
+            <div key={index}>{el.message}</div>
+        )
+
+    })}*/
         <div className="App">
-            <FullInput setMessage={setMessage} data={message} addMessageFullInput={addMessageFullInput}/>
 
-            <Input title={title} setTitle={setTitle}/>
-            <Button2 name={`+`} buttonHandler={buttonHandler}/>
-
-
-            {message.map((el, index) => {
-                return (
-                    <div key={index}>{el.message}</div>
-                )
-
-    })}
         </div>
             )
 
